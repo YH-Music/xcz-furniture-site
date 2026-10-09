@@ -4,63 +4,143 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>XCZ Furniture — Custom Case Goods & Flat-Pack Export from Kaiping, China</title>
+<meta name="description" content="Kaiping furniture works since 1999. Custom wardrobes, bedroom sets, bunk systems and contract fit-outs, engineered for flat-pack export. ISO 9001 certified.">
 <style>
-  :root{--ink:#26211b;--wood:#8a5a2b;--wood-d:#6b441e;--paper:#f8f6f2;--line:#e5e0d6}
+  :root{
+    --paper:#faf7f2; --cream:#fffdf9; --ink:#2b2620; --walnut:#7c4f2b; --walnut-d:#5d3a1e;
+    --sage:#8a9a8b; --line:#e8e1d5; --soft:#6f675c;
+  }
   *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--paper);line-height:1.6}
-  .sans{font-family:'Segoe UI',Arial,Helvetica,sans-serif}
-  header{background:#fff;border-bottom:3px solid var(--wood)}
-  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
-  .topbar{display:flex;justify-content:space-between;align-items:center;padding:18px 0;flex-wrap:wrap;gap:10px}
-  .logo{font-size:21px;font-weight:700}
-  .logo b{color:var(--wood)}
-  nav a{margin-left:20px;color:var(--ink);text-decoration:none;font-family:'Segoe UI',Arial,sans-serif;font-size:14px}
-  nav a:hover{color:var(--wood)}
-  .hero{padding:56px 0 40px}
-  .hero h1{font-size:36px;line-height:1.25;max-width:760px}
-  .hero p{margin-top:14px;color:#5a646e;max-width:680px;font-size:17px}
-  .cta{display:inline-block;margin-top:20px;background:var(--wood);color:#fff;padding:13px 28px;text-decoration:none;font-family:'Segoe UI',Arial,sans-serif;font-size:15px;border-radius:3px}
-  .cta.alt{background:#fff;color:var(--wood-d);border:1px solid var(--wood);margin-left:10px}
-  .strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;padding:10px 0 40px}
-  .tile{background:#fff;border:1px solid var(--line);border-radius:4px;overflow:hidden}
-  .tile img{width:100%;height:190px;object-fit:cover;display:block}
-  .tile div{padding:12px 16px;font-size:14.5px;font-family:'Segoe UI',Arial,sans-serif}
-  .why{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;padding-bottom:46px}
-  .why .card{background:#fff;border:1px solid var(--line);border-radius:4px;padding:20px 22px}
-  .why b{display:block;color:var(--wood-d);font-size:16.5px;margin-bottom:6px}
-  .why p{font-size:14.5px;color:#4a5560}
-  footer{padding:26px 0;font-size:13px;color:#8a8f96;text-align:center;border-top:1px solid var(--line)}
+  html{scroll-behavior:smooth}
+  body{font-family:'Segoe UI',Arial,Helvetica,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7}
+  .serif{font-family:Georgia,'Times New Roman',serif}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+
+  header{position:sticky;top:0;z-index:10;background:rgba(250,247,242,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .topbar{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
+  .logo{font-family:Georgia,serif;font-size:20px;letter-spacing:1px}
+  .logo b{color:var(--walnut)}
+  nav a{margin-left:22px;color:var(--soft);text-decoration:none;font-size:13.5px;letter-spacing:1px;text-transform:uppercase}
+  nav a:hover{color:var(--walnut)}
+
+  /* HERO — editorial split, big type left, tall image right */
+  .hero{display:grid;grid-template-columns:1fr 1fr;min-height:560px}
+  .hero .txt{padding:72px 48px 64px 0;display:flex;flex-direction:column;justify-content:center}
+  .wrap > .hero{margin:0}
+  .kicker{color:var(--walnut);font-size:12.5px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px}
+  .kicker::before{content:"";display:inline-block;width:34px;height:1px;background:var(--walnut);vertical-align:middle;margin-right:12px}
+  .hero h1{font-family:Georgia,serif;font-weight:400;font-size:44px;line-height:1.22;max-width:560px}
+  .hero h1 i{font-style:italic;color:var(--walnut-d)}
+  .hero p{margin-top:22px;color:var(--soft);font-size:16px;max-width:520px}
+  .btnrow{margin-top:32px}
+  .cta{display:inline-block;background:var(--walnut);color:#fff;padding:13px 28px;text-decoration:none;font-size:14px;letter-spacing:.5px;border-radius:2px}
+  .cta:hover{background:var(--walnut-d)}
+  .cta.ghost{background:transparent;color:var(--walnut-d);border:1px solid var(--walnut);margin-left:10px}
+  .hero .pic{position:relative;overflow:hidden}
+  .hero .pic img{width:100%;height:100%;object-fit:cover;display:block}
+  .hero .pic::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--paper) 0%,transparent 18%)}
+
+  .band{background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .band .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px;padding:36px 0;text-align:center}
+  .fact b{display:block;font-family:Georgia,serif;font-size:30px;color:var(--walnut-d);font-weight:400}
+  .fact span{font-size:12.5px;color:var(--soft);letter-spacing:1.5px;text-transform:uppercase}
+
+  section{padding:76px 0}
+  .sec-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:36px;flex-wrap:wrap;gap:12px}
+  .sec-head h2{font-family:Georgia,serif;font-size:32px;font-weight:400}
+  .sec-head a{color:var(--walnut);text-decoration:none;font-size:14px;border-bottom:1px solid var(--walnut)}
+
+  /* asymmetric product mosaic */
+  .mosaic{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+  .tile{position:relative;border-radius:4px;overflow:hidden;background:#eee}
+  .tile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+  .tile:hover img{transform:scale(1.05)}
+  .tile .cap{position:absolute;left:0;right:0;bottom:0;padding:34px 18px 14px;color:#fff;font-size:14px;
+    background:linear-gradient(transparent,rgba(30,22,14,.75))}
+  .t1{grid-column:span 3;aspect-ratio:16/10}
+  .t2{grid-column:span 3;aspect-ratio:16/10}
+  .t3{grid-column:span 2;aspect-ratio:4/5}
+  .t4{grid-column:span 2;aspect-ratio:4/5}
+  .t5{grid-column:span 2;aspect-ratio:4/5}
+
+  .why{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:0;border-top:1px solid var(--line)}
+  .why .cell{padding:30px 26px;border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+  .why .num{font-family:Georgia,serif;font-size:15px;color:var(--sage);letter-spacing:2px}
+  .why b{display:block;font-family:Georgia,serif;font-size:18px;font-weight:400;color:var(--walnut-d);margin:8px 0 8px}
+  .why p{font-size:14px;color:var(--soft)}
+
+  .quote{background:#241d15;color:#efe9df;padding:64px 0}
+  .quote .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .quote h2{font-family:Georgia,serif;font-weight:400;font-size:26px;max-width:640px}
+  .quote h2 i{color:#d8b98f}
+  .quote .cta{background:#d8b98f;color:#241d15}
+
+  footer{padding:30px 0;font-size:12.5px;color:#9a917f;text-align:center}
+  footer a{color:var(--walnut)}
+  @media(max-width:900px){.hero{grid-template-columns:1fr}.hero .txt{padding:48px 28px}.hero .pic{min-height:320px}.mosaic{grid-template-columns:repeat(2,1fr)}.t1,.t2,.t3,.t4,.t5{grid-column:span 1;aspect-ratio:4/3}}
 </style>
 </head>
 <body>
 <header>
   <div class="wrap topbar">
     <div class="logo"><a href="index.html" style="color:inherit;text-decoration:none">XCZ <b>Furniture</b></a></div>
-    <nav class="sans"><a href="index.html">Home</a><a href="products.html">Products</a><a href="factory.html">Factory</a><a href="#contact">Contact</a></nav>
+    <nav><a href="index.html">Home</a><a href="products.html">Products</a><a href="factory.html">Factory</a><a href="#contact">Contact</a></nav>
   </div>
 </header>
 
-<div class="hero wrap">
-  <h1>Custom wardrobes, bedroom sets &amp; fitted furniture — engineered for flat-pack export.</h1>
-  <p>A Kaiping furniture works running since 1999: ISO 9001 certified, nine consecutive years of Grade-A tax credit. We take your drawings or your floor plan, and deliver numbered flat-pack kits that assemble cleanly on site — from one sample unit to full hotel and student-housing projects.</p>
-  <a class="cta" href="products.html">See products</a>
-  <a class="cta alt" href="factory.html">Tour the factory</a>
+<div class="hero">
+  <div class="txt" style="padding-left:max(28px, calc((100vw - 1180px)/2))">
+    <div class="kicker">Kaiping · Since 1999</div>
+    <h1>Furniture that ships flat and <i>assembles like it was built on site</i>.</h1>
+    <p>Custom wardrobes, bedroom sets, bunk systems and contract fit-outs from our own works — ISO 9001 certified, nine consecutive years of Grade-A tax credit. Send us your drawings or a floor plan; we deliver numbered flat-pack kits, from one sample unit to full hotel and student-housing projects.</p>
+    <div class="btnrow">
+      <a class="cta" href="products.html">See products</a>
+      <a class="cta ghost" href="factory.html">Tour the factory</a>
+    </div>
+  </div>
+  <div class="pic"><img src="web/closet_131.jpg" alt="Walk-in closet system with integrated lighting"></div>
 </div>
 
-<div class="strip wrap">
-  <div class="tile"><img src="web/closet_131.jpg" alt="Closet systems"><div>Walk-in closets &amp; wardrobe systems, integrated lighting</div></div>
-  <div class="tile"><img src="web/bunk_162.jpg" alt="Bunk systems"><div>Bunk &amp; apartment systems for dormitories and studios</div></div>
-  <div class="tile"><img src="web/kitchen_155.jpg" alt="Kitchen"><div>Kitchen cabinetry with stone worktops</div></div>
-  <div class="tile"><img src="web/office_168.jpg" alt="Office"><div>Office &amp; contract fit-outs, project scale</div></div>
+<div class="band">
+  <div class="wrap row">
+    <div class="fact"><b>1999</b><span>works established</span></div>
+    <div class="fact"><b>ISO 9001</b><span>+ 14001 + 45001</span></div>
+    <div class="fact"><b>Grade-A</b><span>taxpayer, 9 years running</span></div>
+    <div class="fact"><b>1 → 1000</b><span>units per project</span></div>
+  </div>
 </div>
 
-<div class="why wrap">
-  <div class="card"><b>Flat-pack engineering</b><p>Every unit is cut, edge-banded and drilled to drawing, then kitted per room with labels and assembly sheets. Containers load tight; on-site assembly is fast.</p></div>
-  <div class="card"><b>Project experience</b><p>Hotel, school, hospital, apartment and office furniture is our certified scope — we build to specification, not just catalog items.</p></div>
-  <div class="card"><b>Verified company</b><p>ISO 9001 / 14001 / 45001 certificates and Grade-A taxpayer status — both checkable in public registries, not just claimed on a website.</p></div>
-  <div class="card"><b>One contact, start to ship</b><p>Design support, production scheduling, QC photos, packing plan and shipping docs — one English-speaking contact handles it end to end.</p></div>
+<section>
+  <div class="wrap">
+    <div class="sec-head"><h2>What we build</h2><a href="products.html">Full catalog →</a></div>
+    <div class="mosaic">
+      <div class="tile t1"><img src="web/closet_130.jpg" alt="Wardrobe systems"><div class="cap">Walk-in closets &amp; wardrobe systems, integrated lighting</div></div>
+      <div class="tile t2"><img src="web/bunk_162.jpg" alt="Bunk systems"><div class="cap">Bunk &amp; apartment systems for dormitories and studios</div></div>
+      <div class="tile t3"><img src="web/kitchen_155.jpg" alt="Kitchen cabinetry"><div class="cap">Kitchen cabinetry &amp; stone worktops</div></div>
+      <div class="tile t4"><img src="web/office_168.jpg" alt="Office fit-outs"><div class="cap">Office &amp; contract fit-outs</div></div>
+      <div class="tile t5"><img src="web/vanity_119.jpg" alt="Bathroom vanities"><div class="cap">Bathroom vanities &amp; bedroom sets</div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="why">
+      <div class="cell"><div class="num">01</div><b>Flat-pack engineering</b><p>Every unit cut, edge-banded and drilled to drawing, kitted per room with labels and assembly sheets. Containers load tight; on-site assembly is fast.</p></div>
+      <div class="cell"><div class="num">02</div><b>Project experience</b><p>Hotel, school, hospital, apartment and office furniture is our certified scope — we build to specification, not just catalog items.</p></div>
+      <div class="cell"><div class="num">03</div><b>Verified company</b><p>ISO certificates and Grade-A taxpayer status — both checkable in public registries, not just claimed on a website.</p></div>
+      <div class="cell"><div class="num">04</div><b>One contact, start to ship</b><p>Design support, production scheduling, QC photos, packing plan and shipping docs — one English-speaking contact end to end.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="quote">
+  <div class="wrap">
+    <h2>Have a floor plan or a drawing? <i>Send it over</i> — we'll quote the whole fit-out.</h2>
+    <a class="cta" href="mailto:sales@xczfurniture.com">sales@xczfurniture.com</a>
+  </div>
 </div>
 
-<footer id="contact">Custom furniture manufacturing partner · Kaiping, Guangdong, China · <a href="mailto:sales@xczfurniture.com" style="color:var(--wood)">sales@xczfurniture.com</a> · <a href="https://wa.me/8618022932999" style="color:var(--wood)">WhatsApp</a> · <a href="tel:+8618022932999" style="color:var(--wood)">+86 180 2293 2999</a></footer>
+<footer id="contact">Custom furniture manufacturing partner · Kaiping, Guangdong, China · <a href="mailto:sales@xczfurniture.com">sales@xczfurniture.com</a> · <a href="https://wa.me/8618022932999">WhatsApp</a> · <a href="tel:+861****2999">+86 180 2293 2999</a></footer>
 </body>
 </html>
